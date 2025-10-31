@@ -1,0 +1,214 @@
+:root {
+  --yellow: #FFD500;
+  --red: #FF003C;
+  --blue: #0066FF;
+  --cyan: #00E0FF;
+  --white: #FFFFFF;
+  --black: #000000;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--white);
+  background-image: radial-gradient(var(--black) 1px, transparent 1px);
+  background-size: 12px 12px;
+  background-attachment: fixed;
+  text-align: center;
+  color: var(--black);
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  background: var(--yellow);
+  padding: 2rem;
+  border-bottom: 4px solid var(--black);
+  position: relative;
+  z-index: 2;
+}
+
+.animated-title {
+  font-family: 'Bangers', cursive;
+  font-size: 3.5rem;
+  color: var(--red);
+  text-shadow: 3px 3px var(--black);
+  animation: bounce 1.5s infinite alternate;
+}
+
+.subtitle {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-8px); }
+}
+
+/* Nav */
+.tab-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: var(--blue);
+  border-bottom: 4px solid var(--black);
+}
+
+.tab-btn {
+  background: var(--cyan);
+  color: var(--black);
+  border: 3px solid var(--black);
+  font-family: 'Bangers', cursive;
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+  transform: scale(1.08);
+  background: var(--yellow);
+}
+
+/* Tab content */
+.tab-content {
+  display: none;
+  padding: 3rem 1rem;
+  position: relative;
+  animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Text boxes */
+.text-box {
+  background: var(--white);
+  border: 4px solid var(--black);
+  box-shadow: 6px 6px 0 var(--yellow);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.text-box:hover {
+  transform: rotate(-1deg) scale(1.02);
+}
+
+.skew-box, .tilt-left, .tilt-right {
+  transform: rotate(-2deg);
+}
+
+.tilt-right { transform: rotate(2deg); }
+
+/* Comic box */
+.comic-box {
+  font-family: 'Bangers', cursive;
+  background: var(--red);
+  color: var(--white);
+  border: 4px solid var(--black);
+  box-shadow: 6px 6px 0 var(--blue);
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  margin: 2rem auto;
+  transition: transform 0.25s ease;
+}
+
+.comic-box:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+
+/* Cards and grids */
+.asym-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem;
+}
+
+.card {
+  background: var(--white);
+  border: 4px solid var(--black);
+  box-shadow: 6px 6px 0 var(--red);
+  padding: 1rem;
+  width: 260px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-10px) rotate(-1deg);
+  box-shadow: 8px 8px 0 var(--yellow);
+}
+
+/* Image placeholders */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border: 3px solid var(--black);
+  margin-bottom: 0.8rem;
+}
+
+/* Color row */
+.color-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+  max-width: 800px;
+  gap: 1rem;
+}
+
+.color-swatch {
+  flex: 1;
+  min-width: 120px;
+  padding: 1rem;
+  border: 3px solid var(--black);
+  font-family: 'Bangers', cursive;
+}
+
+/* Reflections */
+.reflection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.reflection-card {
+  border: 4px solid var(--black);
+  box-shadow: 5px 5px 0 var(--black);
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.reflection-card:hover {
+  transform: translateY(-10px) rotate(-1deg);
+}
+
+/* Footer */
+footer {
+  background: var(--blue);
+  color: var(--white);
+  border-top: 4px solid var(--black);
+  padding: 1rem;
+  font-weight: 600;
+}
